@@ -70,7 +70,7 @@ ZSH_THEME="fishy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(aliases git archlinux colorize)
+plugins=(aliases git archlinux zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
