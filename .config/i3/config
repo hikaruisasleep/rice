@@ -276,10 +276,9 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+t exec --no-startup-id ~/.config/polybar/launch.sh
 
 # Autostart apps
-exec --no-startup-id feh --bg-scale ~/Pictures/wp/xqjayos0jx281.jpg
+exec --no-startup-id feh --bg-scale ~/wallpapers/xqjayos0jx281.jpg
 exec --no-startup-id picom --experimental-backends -b
 exec numlockx
 exec kitty
-exec --no startup-id tilda
 exec google-chrome-stable
 exec discord
