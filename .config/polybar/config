@@ -18,7 +18,9 @@
 
 [colors]
 background = #00000000
-background-alt = #444
+background-alt = #5f1a1b26
+foreground = #a9b1d6
+foreground-alt = #a9b1d6
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -39,17 +41,17 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = M+ 1m light Nerd Font Complete Mono:pixelsize=8;1
+font-0 = Code New Roman Nerd Font Complete Mono:pixelsize=8;1
 font-1 = FontAwesome:pixelsize=10;1
 
-modules-left = powermenu
+modules-left = now-playing
 modules-center = i3
 modules-right = cpu memory wlan date
 
 separator = |
 
-tray-position = right
-tray-padding = 2
+tray-position = left
+tray-padding = 3
 
 wm-restack = i3
 
@@ -181,7 +183,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "CPU "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -242,7 +244,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = ""
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
