@@ -1,0 +1,4 @@
+keycode  66 = BackSpace
+remove Lock    = Caps_Lock
+! remove Mod5    = Mode_switch Mode_switch
+
