@@ -1,0 +1,105 @@
+/*
+ *
+ * Author  : Ben Wu
+ * Github  : hikaruisasleep
+ * Twitter : hikaruisasleep
+ *
+ */
+
+configuration {
+	modi:				"window,run,drun";
+	location:			1;
+	show-icons:			false;
+	sidebar-mode:		true;
+	display-window:		"";
+    display-windowcd: 	"";
+    display-run: 		"";
+    display-ssh: 		"";
+    display-drun: 		"";
+    display-combi: 		"";
+	terminal:			"kitty";
+}
+
+* {
+	nord0:	#2E3440;
+	nord1:	#3B4252;
+	nord2:	#434C5E;
+	nord3:	#4C566A;
+	nord4:	#D8DEE9;
+	nord5:	#E5E9F0;
+	nord6:	#ECEFF4;
+	nord7:	#8FBCBB;
+	nord8:	#88C0D0;
+	nord9:	#81A1C1;
+	nord10:	#5E81AC;
+	nord11:	#BF616A;
+	nord12:	#D08770;
+	nord13:	#EBCB8B;
+	nord14:	#A3BE8C;
+	nord15:	#B48EAD;
+
+	background-color:	@nord0;
+	fg:	@nord6;
+	normal-background:	@background-color;
+	urgent-background:	@background-color;
+	active-background:	@background-color;
+	normal-foreground:	@fg;
+	urgent-foreground:	@fg;
+	active-foreground:	@fg;
+
+	font: "Alata 10";
+}
+
+window {
+	border: 		0px;
+	border-color:	@nord1;
+	padding:		20;
+	width:			20%;
+	height:			100%;
+}
+
+mainbox {
+	border:			0px;
+}
+
+element {
+    border: 						0px;
+    border-radius: 					4px;
+    padding: 						5px;
+}
+element normal.normal {
+    background-color: 				@nord1;
+    text-color:       				@fg;
+}
+element normal.urgent {
+    background-color: 				@nord1;
+    text-color:       				@fg;
+}
+element normal.active {
+    background-color: 				@fg;
+    text-color:       				@nord1;
+}
+element selected.normal {
+    background-color: 				@fg;
+    text-color:       				@nord1;
+}
+element selected.urgent {
+    background-color: 				@nord1;
+    text-color:       				@fg;
+}
+element selected.active {
+    background-color: 				@fg;
+    text-color:       				@nord1;
+}
+element alternate.normal {
+    background-color: 				@nord1;
+    text-color:       				@fg;
+}
+element alternate.urgent {
+    background-color: 				@nord1;
+    text-color:       				@fg;
+}
+element alternate.active {
+    background-color: 				@nord1;
+    text-color:       				@fg;
+}
