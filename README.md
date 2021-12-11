@@ -7,7 +7,7 @@ just a collection of my unix desktop settings
 apps used:
 ```
 i3-gaps picom-git rofi polybar feh
-kitty zsh oh-my-zsh neofetch
+kitty zsh oh-my-zsh bunnyfetch
 ```
 theme is either nord or tokyonight depending on my mood
 
