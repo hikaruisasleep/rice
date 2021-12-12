@@ -281,7 +281,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+t exec --no-startup-id ~/.config/polybar/launch.sh
 
 # Autostart apps
-exec_always --no-startup-id feh --bg-scale ~/wallpapers/8.png
+exec_always --no-startup-id feh --bg-fill ~/wallpapers/tn_1162433.jpg
 exec --no-startup-id picom --experimental-backends -b
 exec numlockx
 exec kitty
