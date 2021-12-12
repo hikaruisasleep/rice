@@ -103,3 +103,6 @@ ZSH_COLORIZE_STYLE="colorful"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cd..="cd .."
+
+# Starship prompt
+eval "$(starship init zsh)"

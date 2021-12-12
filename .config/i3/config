@@ -12,7 +12,7 @@
 set $mod Mod4
 set $alt Mod1
 
-font pango:Code New Roman Nerd Font Complete 7
+font pango:mononoki-Regular Nerd Font Complete Mono 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -164,9 +164,13 @@ set $ws10 "10"
 assign [ class="Google-chrome" ] $ws6
 assign [ class="code-oss" ] $ws5
 assign [ class="discord" ] $ws10
+assign [ class="Spotify" ] $ws1
 
 # start certain apps in floating mode
 for_window [ class="flameshot" ] floating enable
+for_window [ class="Nvidia-settings" ] floating enable
+for_window [ class="Spotify" ] floating enable
+
 
 # assign workspaces to different monitors
 set $m1 "HDMI-0"
