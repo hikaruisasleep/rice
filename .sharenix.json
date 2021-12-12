@@ -1,0 +1,12 @@
+{
+    "Name": "sxcu.net - hikaru.is-a.fail",
+    "DestinationType": "ImageUploader",
+    "RequestURL": "https://hikaru.is-a.fail/upload",
+    "FileFormName": "image",
+    "Arguments": {
+        "token": "71c72e43-d397-4678-a973-cb67ce552d7c"
+    },
+    "URL": "$json:url$",
+    "ThumbnailURL": "$json:thumb$",
+    "DeletionURL": "$json:del_url$"
+}
