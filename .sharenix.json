@@ -1,12 +1,45 @@
 {
-    "Name": "sxcu.net - hikaru.is-a.fail",
-    "DestinationType": "ImageUploader",
-    "RequestURL": "https://hikaru.is-a.fail/upload",
-    "FileFormName": "image",
-    "Arguments": {
-        "token": "71c72e43-d397-4678-a973-cb67ce552d7c"
-    },
-    "URL": "$json:url$",
-    "ThumbnailURL": "$json:thumb$",
-    "DeletionURL": "$json:del_url$"
+    "DefaultFileUploader": "hikaru.is-a.fail - file, image",
+    "DefaultImageUploader": "hikaru.is-a.fail - file, image",
+    "DefaultUrlShortener": "hikaru.is-a.fail - url",
+    "XineramaHead": 0,
+    "NotificationTime": 30,
+    "NotifyUploading": true,
+    "NotifyCommand": "",
+    "ClipboardTime": 5,
+    "SaveFolder": "Pictures/sharenix",
+    "OrganizedFolders": false,
+
+    "Services": [
+        {
+            "Name": "hikaru.is-a.fail - file, image",
+            "RequestType": "POST",
+            "RequestURL": "https://hikaru.is-a.fail/api/files/create",
+            "FileFormName": "file",
+            "Arguments": {
+                "token": "c79b25ab-5884-4919-b035-6d0fbf697756"
+            },
+            "URL": "$json:url$",
+            "ThumbnailURL": "$json:thumb$",
+            "DeletionURL": "$json:del_url$",
+            "ErrorMessage": "$json:code$ $json:error$",
+            "Version": "13.6.1",
+            "og_properties": {
+                "discord_hide_url": false
+            }
+        },
+        {
+            "Name": "hikaru.is-a.fail - url",
+            "RequestType": "POST",
+            "RequestURL": "https://hikaru.is-a.fail/api/links/create",
+            "Arguments": {
+                "link": "$input$"
+            },
+            "URL": "$json:url$",
+            "DeletionURL": "$json:del_url$",
+            "ErrorMessage": "$json:code$ $json:error$",
+            "Version": "13.6.1"
+        }
+
+    ]
 }
