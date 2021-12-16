@@ -21,7 +21,7 @@ ZSH_THEME="fishy"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
@@ -80,6 +80,7 @@ source $ZSH/oh-my-zsh.sh
 ZSH_COLORIZE_STYLE="colorful"
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export BROWSER="google-chrome-stable"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

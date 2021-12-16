@@ -185,15 +185,15 @@ assign [ class="Google-chrome" ] $ws6
 assign [ class="code-oss" ] $ws5
 assign [ class="discord" ] $ws10
 assign [ class="Spotify" ] $ws2
+assign [ class="g-jdownloader-update-launcher-JDLauncher" ] $ws3
 
 # start certain apps in floating mode
 for_window [ class="flameshot" ] floating enable
 for_window [ class="Nvidia-settings" ] floating enable
-for_window [ class="Spotify" ] floating enable
 
 # assign workspaces to different monitors
-set $m1 "HDMI-3"
-set $m2 "VGA-2"
+set $m1 "HDMI-0"
+set $m2 "VGA-0"
 workspace $ws1 output $m1
 workspace $ws2 output $m1
 workspace $ws3 output $m1
@@ -303,7 +303,8 @@ bindsym $mod+t exec --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill ~/wallpapers/tn_1162433.jpg
 exec --no-startup-id picom --experimental-backends -b
 exec --no-startup-id numlockx
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec kitty
-exec google-chrome-stable
+exec sleep 10 google-chrome-stable
 exec discord
 exec spotify
