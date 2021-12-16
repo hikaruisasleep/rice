@@ -104,6 +104,10 @@ ZSH_COLORIZE_STYLE="colorful"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cd..="cd .."
 alias py="python"
+alias vim="nvim"
+alias update="upgrade"
+alias upd="upgrade"
+alias upg="upgrade"
 
 # Starship prompt
 eval "$(starship init zsh)"
