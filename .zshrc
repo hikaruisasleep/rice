@@ -108,6 +108,7 @@ alias vim="nvim"
 alias update="upgrade"
 alias upd="upgrade"
 alias upg="upgrade"
+alias a="upgrade"
 
 # Starship prompt
 eval "$(starship init zsh)"
