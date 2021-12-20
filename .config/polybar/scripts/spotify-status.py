@@ -121,7 +121,9 @@ try:
     album = fix_string(metadata['xesam:album']) if metadata['xesam:album'] else ''
 
     if (quiet and status == 'Paused') or (not artist and not song and not album):
-        print('')
+        artist = ''
+        song = ''
+        album = ''
     else:
         if font:
             artist = label_with_font.format(font=font, label=artist)
