@@ -300,12 +300,12 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+t exec --no-startup-id ~/.config/polybar/launch.sh
 
 # Autostart apps
-exec_always --no-startup-id feh --bg-fill ~/wallpapers/wallhaven-g836wq.jpg
+exec_always --no-startup-id feh --bg-fill ~/wallpapers/destiny-tn.png
 exec --no-startup-id picom --experimental-backends -b
 exec --no-startup-id numlockx
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id fcitx5 -d
 exec kitty
-exec sleep 10 google-chrome-stable
+exec google-chrome-stable
 exec discord
 exec spotify
