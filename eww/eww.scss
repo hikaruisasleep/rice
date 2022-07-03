@@ -1,0 +1,50 @@
+* {
+  all: unset;
+}
+
+/* bar */
+.bar {
+  background-color: #151515;
+  border-radius: 10px;
+}
+
+/* left side */
+.left-side {
+  margin-left: 20px;
+  /* workspaces */
+  .workspaces {
+    font-size: 12px;
+    font-family: SFMono Nerd Font Mono;
+    font-weight: bold;
+    background-color: rgba(00, 00, 00, 0.0);
+  }
+  .0, .01, .011 {
+    margin-right: 20px;
+  }
+  .0 {
+    color: #424242;
+  }
+  .01 {
+    color: #E8E3E3;
+  }
+  .011 {
+    color: #8DA3B9;
+  }
+}
+
+/* right side */
+.right-side {
+  /* system info */
+  .sysinfo {
+    /* cpu */
+    .cpu {
+      color: #8aa6a2;
+      border-radius: 10px;
+    }
+    /* ram */
+    .ram {
+      color: #d9bc8c;
+      border-radius: 10px;
+    }
+  }
+}

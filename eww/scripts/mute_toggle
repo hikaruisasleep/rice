@@ -1,0 +1,19 @@
+#!/bin/bash
+
+VOL_IS_MUTED_LOCKFILE="$HOME/.cache/eww-mute.lock"
+
+toggle() {
+
+    if [[ ! -f "$VOL_IS_MUTED_LOCKFILE" ]]; then
+        /home/icarus/eww/target/release/eww update vol_muted=true
+        touch "$VOL_IS_MUTED_LOCKFILE" && echo "muted"
+    elif [[ -f "$VOL_IS_MUTED_LOCKFILE" ]]; then
+        /home/icarus/eww/target/release/eww update vol_muted=false
+        rm "$VOL_IS_MUTED_LOCKFILE" && echo "unmuted"
+    fi
+
+    amixer -D default -q sset Master toggle
+
+}
+
+toggle

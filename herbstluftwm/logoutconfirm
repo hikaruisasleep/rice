@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "Are you sure you want to quit herbstluftwm?"
+read -r confirm
+
+if [ confirm == "y" ] || [ confirm == "Y"] || [ -z confirm ]; then
+  herbstclient quit
+  exit 0
+else
+  exit 0
+fi

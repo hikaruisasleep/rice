@@ -1,0 +1,11 @@
+(deflisten workspace_script
+  "scripts/workspaces"
+)
+
+(defwidget workspaces []
+  (literal
+    :content workspace_script
+    :valign "center"
+    :halign "start"
+  )
+)

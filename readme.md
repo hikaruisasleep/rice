@@ -2,4 +2,4 @@
 
 ---
 
-coming soon to an unixporn sub near you
+configs for unix desktop
