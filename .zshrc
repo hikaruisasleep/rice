@@ -2,13 +2,25 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
+<<<<<<< HEAD
 export ZSH="/home/icarus/.oh-my-zsh"
+=======
+export ZSH="$HOME/.oh-my-zsh"
+>>>>>>> 1446afc (beeg)
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+<<<<<<< HEAD
 ZSH_THEME="fishy"
+=======
+export TYPEWRITTEN_PROMPT_LAYOUT="half_pure"
+export TYPEWRITTEN_ARROW_SYMBOL="➜"
+export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+export TYPEWRITTEN_CURSOR="beam"
+ZSH_THEME="typewritten"
+>>>>>>> 1446afc (beeg)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -25,11 +37,19 @@ HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
+<<<<<<< HEAD
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
+=======
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+zstyle ':omz:update' frequency 14
+>>>>>>> 1446afc (beeg)
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -41,13 +61,21 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
+<<<<<<< HEAD
 ENABLE_CORRECTION="true"
+=======
+# ENABLE_CORRECTION="true"
+>>>>>>> 1446afc (beeg)
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+<<<<<<< HEAD
 COMPLETION_WAITING_DOTS="true"
+=======
+# COMPLETION_WAITING_DOTS="true"
+>>>>>>> 1446afc (beeg)
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -60,7 +88,11 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
+<<<<<<< HEAD
 # HIST_STAMPS="mm/dd/yyyy"
+=======
+HIST_STAMPS="%d/%m/%Y"
+>>>>>>> 1446afc (beeg)
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -70,12 +102,17 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+<<<<<<< HEAD
 plugins=(aliases git archlinux zsh-autosuggestions)
+=======
+plugins=(git aliases archlinux zsh-autosuggestions rust thefuck)
+>>>>>>> 1446afc (beeg)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+<<<<<<< HEAD
 # Settings for colorize plugin
 ZSH_COLORIZE_STYLE="colorful"
 
@@ -86,6 +123,29 @@ export VISUAL="code"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+=======
+# export MANPATH="/usr/local/man:$MANPATH"
+
+export PATH="${PATH}"
+
+export HOME="/home/icarus"
+export XDG_DATA_HOME="${HOME}/.local"
+export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_STATE_HOME="${HOME}/.local/state"
+export XDG_CACHE_HOME="${HOME}/.cache/"
+export CARGO_HOME="${HOME}/.cargo"
+
+export LANG=en_GB.UTF-8
+
+export TERM='xterm-kitty'
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+  export VISUAL='vim'
+else
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+fi
+>>>>>>> 1446afc (beeg)
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -98,6 +158,7 @@ export VISUAL="code"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+<<<<<<< HEAD
 alias cd..="cd .."
 alias py="python"
 alias vim="nvim"
@@ -109,3 +170,10 @@ alias r="ranger"
 
 # Starship prompt
 eval "$(starship init zsh)"
+=======
+alias ls="ls -l --color=auto"
+alias la="ls -la --color=auto"
+alias grep="grep --color -i"
+alias vim="nvim"
+alias hc="herbstclient"
+>>>>>>> 1446afc (beeg)
