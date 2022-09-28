@@ -12,7 +12,7 @@ export TYPEWRITTEN_PROMPT_LAYOUT="half_pure"
 export TYPEWRITTEN_ARROW_SYMBOL="➜"
 export TYPEWRITTEN_RELATIVE_PATH="adaptive"
 export TYPEWRITTEN_CURSOR="beam"
-ZSH_THEME="typewritten"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -82,14 +82,14 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-export HOME="/home/icarus"
+export HOME="/home/paranoia"
 export XDG_DATA_HOME="${HOME}/.local"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_STATE_HOME="${HOME}/.local/state"
 export XDG_CACHE_HOME="${HOME}/.cache/"
 export CARGO_HOME="${HOME}/.cargo"
 
-export LANG=en_GB.UTF-8
+export LANG=en_US.UTF-8
 
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -110,8 +110,17 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias rj="ranger"
 alias ls="ls -l --color=auto"
 alias la="ls -la --color=auto"
 alias grep="grep --color -i"
 alias vim="nvim"
 alias hc="herbstclient"
+alias yay="paru"
+fpath=($fpath "/home/paranoia/.zfunctions")
+
+# Set typewritten ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt typewritten
+fpath=($fpath "/home/paranoia/.zfunctions")
+fpath=($fpath "/home/paranoia/.zfunctions")
