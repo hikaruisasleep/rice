@@ -39,7 +39,7 @@ hc keybind XF86MonBrightnessUp spawn ~/.config/herbstluftwm/brightness inc
 hc keybind XF86MonBrightnessDown spawn ~/.config/herbstluftwm/brightness dec
 
 # application shortcuts
-hc keybind $Mod-Return spawn "${TERMINAL:-xterm}" # use your $TERMINAL with xterm as fallback
+hc keybind $Mod-Return spawn "$TERMINAL" # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-d spawn rofi -show run # application launcher
 hc keybind $Mod-Shift-d spawn rofi -show drun # application launcher, desktop mode
 hc keybind $Mod-Shift-s spawn ~/.config/herbstluftwm/scrsht
@@ -159,6 +159,11 @@ hc set tree_style '╾│ ├└╼─┐'
 
 # set the wallpaper
 feh --bg-scale ~/Pictures/wallpapers/3.png &
+
+# touchpad configurations
+xinput set-prop 11 275 1 # tapping
+xinput set-prop 11 283 1 # natural scroll
+xinput set-prop 11 299 35 # scrolling distance
 
 # unlock, just to be sure
 hc unlock
