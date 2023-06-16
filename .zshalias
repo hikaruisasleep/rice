@@ -1,0 +1,4 @@
+alias ls="ls -l --color=auto"
+alias la="ls -la --color=auto"
+alias grep="grep --color -i"
+alias vim="nvim"

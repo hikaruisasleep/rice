@@ -2,4 +2,4 @@
 
 ---
 
-configs for unix desktop
+configs for linux desktop
