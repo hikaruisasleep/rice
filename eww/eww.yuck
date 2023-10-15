@@ -1,0 +1,126 @@
+(defwindow bar
+    :monitor 0
+    :stacking "fg"
+    :namespace "eww"
+    :exclusive "true"
+    :geometry (geometry
+                :width "100%"
+                :height "2%"
+                :anchor "top center"
+                )
+    (bar_layout)
+)
+
+(defwidget bar_layout []
+    (centerbox
+        :orientation "h"
+        (box
+            :class "left-child"
+            :halign "start"
+            :hexpand "false"
+            :space-evenly "false"
+            :spacing 30
+        
+            (workspaces)
+            (gpu)
+        )
+        (box
+            :class "center-child"
+            :halign "center"
+            :hexpand "false"
+            :space-evenly "false"
+            
+            (clock)
+        )
+        (box
+            :class "right-child"
+            :halign "end"
+            :hexpand "false"
+            :space-evenly "false"
+            :spacing 15
+
+            (battery
+                :status {EWW_BATTERY.BAT1.status}
+                :capacity {EWW_BATTERY.BAT1.capacity}
+            )
+            (button
+                :onclick `${EWW_CMD} update systray-active="${systray-active == 'true' ? 'false' : 'true'}"`
+                :class "systray-btn"
+                (label :class "systray-icon" :text "")
+            )
+        )
+    )
+)
+
+(defwindow system-tray
+    :monitor 0
+    :stacking "fg"
+    :namespace "eww"
+    :exclusive "false"
+    :geometry (geometry
+                :width "1%"
+                :anchor "top right"
+                :x "0"
+                :y "0%"
+                )
+    
+    (box
+        (revealer
+            :transition "slide down"
+            :reveal {systray-active}
+            (systray :pack-direction "ttb" :class "systray")
+        )
+    )
+)
+
+(defvar systray-active "false")
+
+(defpoll active-workspace :interval "100ms" `hyprctl activeworkspace -j | jq -r \".name\"`)
+(deflisten workspace "hyprland-workspaces eDP-1")
+
+(defpoll time
+    :interval "5s"
+    :initial `date +'{"hour":"$H","min":"%M"}'`
+    `date +'{"hour":"%H","min":"%M"}'`
+)
+
+(defpoll gpu
+    :interval "120s"
+    :initial "suspended"
+    `cat /sys/bus/pci/devices/0000:01:00.0/power/runtime_status`
+)
+
+(defwidget workspaces []
+    (box :class "workspaces"
+        :spacing 5
+        (button :class {active-workspace == "1" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 1" "1")
+        (button :class {active-workspace == "2" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 2" "2")
+        (button :class {active-workspace == "3" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 3" "3")
+        (button :class {active-workspace == "4" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 4" "4")
+        (button :class {active-workspace == "5" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 5" "5")
+        (button :class {active-workspace == "6" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 6" "6")
+        (button :class {active-workspace == "7" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 7" "7")
+        (button :class {active-workspace == "8" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 8" "8")
+        (button :class {active-workspace == "9" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 9" "9")
+        (button :class {active-workspace == "10" ? 'workspace-active' : ''} :onclick "hyprctl dispatch workspace 10" "10")
+    )
+)
+
+(defwidget gpu []
+    (box
+        (label :text "" :class "${gpu == 'active' ? 'nvidia' : 'integrated'} gpu-icon")
+    )
+)
+
+(defwidget clock []
+    (label :text "${time.hour}:${time.min}")
+)
+
+(defwidget battery [status capacity]
+    (box :class "battery"
+        :space-evenly "false"
+        (label :class "battery-icon ${capacity <= 20 ? 'battery-low' : ''}" :text {status == 'Charging' ? "󰂄" : "󰁹"})
+        (label :text "${capacity}${capacity <= 20 ? '!' : '%'}")
+    )
+)
+

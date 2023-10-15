@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+
+# Powermode selector
+pwm=`cat /sys/class/power_supply/BAT1/status`
+
+# Translate powermode to mode
+if [[ $pwm == 'Discharging' ]];
+then
+    pwm='off'
+else
+    pwm='on'
+fi
+
+mode=${1-$pwm}
+
+echo $mode
+
+# Kill all wallpaper daemon
+killall mpvpaper; killall swaybg
+
+# Deploy wallpaper depending on powermode
+if [[ $mode == 'off' ]];
+then
+    exec swaybg -i /home/icarus/rice/wallpapers/lucy-mt-prsv.jpg -m fill
+else
+    exec mpvpaper -o "--no-audio --loop=inf" eDP-1 /home/icarus/Downloads/kessoku-band-in-the-train-bocchi-the-rock-moewalls-com.mp4
+    #exec swaybg -i /home/icarus/rice/wallpapers/lucy-mt-prsv.jpg -m fill
+fi
+

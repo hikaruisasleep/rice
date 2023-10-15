@@ -1,0 +1,61 @@
+* {
+    all:unset;
+    font-family: "SF Pro";
+    font-size: 10px;
+}
+
+.bar {
+    background-color: #191919;
+}
+
+.workspace-active {
+    color: #e7e7e7;
+}
+
+.workspaces {
+    color: #a0a0a0;
+}
+
+.clock-lbl {
+    padding-left: 50em;
+}
+
+.battery {
+    & >.battery-icon {
+        font-family: "SFMono Nerd Font";
+        font-size:10px;
+        margin: 0; padding: 0;
+        margin-right: 0.5em;
+    }
+    .battery-low {
+        color: #f00;
+    }
+}
+
+.gpu-icon {
+    font-family: "SFMono Nerd Font";
+    font-size: 15px;
+}
+.nvidia {
+    color: #0f0;
+}
+.integrated {
+    color: #f00;
+}
+
+.systray {
+    background-color: #191919;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+}
+.systray-icon {
+    font-size: 15px;
+}
+
+.left-child {
+    margin-left: 0.75em;
+}
+.right-child {
+    margin-right: 0.75em;
+}
+
