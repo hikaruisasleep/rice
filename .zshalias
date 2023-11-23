@@ -4,3 +4,8 @@ alias grep="grep --color -i"
 alias vim="nvim"
 
 alias batt="cat /sys/class/power_supply/BAT1/capacity"
+
+alias py='python'
+alias pip='python -m pip'
+
+alias rj='ranger'

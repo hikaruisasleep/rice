@@ -1,3 +1,6 @@
+(defvar tray-active false)
+(defvar date-hover false)
+
 (defwindow bar
     :monitor 0
     :stacking "fg"
@@ -24,13 +27,24 @@
             (workspaces)
             (gpu)
         )
-        (box
+        (eventbox
             :class "center-child"
-            :halign "center"
-            :hexpand "false"
-            :space-evenly "false"
-            
-            (clock)
+            :hexpand "true"
+            :onhover `${EWW_CMD} update date-hover="true"`
+            :onhoverlost `${EWW_CMD} update date-hover="false"`
+            :onclick `${EWW_CMD} update date-hover="true"`
+            (box
+                :halign "center"
+                :hexpand "true"
+                :space-evenly "false"
+                :spacing 0
+                (revealer
+                    :transition "slideleft"
+                    :reveal {date-hover}
+                    (label :text "${time.datetime}   I   " :class "datetime")
+                )
+                (clock)
+            )
         )
         (box
             :class "right-child"
@@ -44,8 +58,8 @@
                 :capacity {EWW_BATTERY.BAT1.capacity}
             )
             (button
-                :onclick `${EWW_CMD} update systray-active="${systray-active == 'true' ? 'false' : 'true'}"`
-                :class "systray-btn"
+                :onclick `${EWW_CMD} update tray-active="${!tray-active}"`
+                :onrightclick `${EWW_CMD} update tray-active="false"`
                 (label :class "systray-icon" :text "")
             )
         )
@@ -56,32 +70,41 @@
     :monitor 0
     :stacking "fg"
     :namespace "eww"
-    :exclusive "false"
     :geometry (geometry
                 :width "1%"
                 :anchor "top right"
-                :x "0"
-                :y "0%"
+                :x "0%"
+                :y "-2%"
                 )
-    
-    (box
-        (revealer
-            :transition "slide down"
-            :reveal {systray-active}
-            (systray :pack-direction "ttb" :class "systray")
+    (eventbox
+        :onclick `${EWW_CMD} update tray-active="${!tray-active}"`
+        :onrightclick `${EWW_CMD} update tray-active="false"`
+        :timeout "10s"
+        
+        (box
+            :orientation "vertical"
+            :spacing 0
+            :space-evenly "false"
+            
+            (label :class "systray-icon" :text "")
+            (revealer
+                :transition "slidedown"
+                :reveal {tray-active}
+                :class "revealer-tray"
+                (systray :pack-direction "ttb" :class "systray-obj")
+            )
         )
     )
 )
 
-(defvar systray-active "false")
 
 (defpoll active-workspace :interval "100ms" `hyprctl activeworkspace -j | jq -r \".name\"`)
 (deflisten workspace "hyprland-workspaces eDP-1")
 
 (defpoll time
     :interval "5s"
-    :initial `date +'{"hour":"$H","min":"%M"}'`
-    `date +'{"hour":"%H","min":"%M"}'`
+    :initial `date +'{"hour":"%H","min":"%M", "datetime":"%a, %d %b %Y"}'`
+    `date +'{"hour":"%H","min":"%M","datetime":"%a, %d %b %Y"}'`
 )
 
 (defpoll gpu

@@ -1,0 +1,5 @@
+{
+    "javascript.suggestionActions.enabled": true,
+    "typescript.suggestionActions.enabled": true,
+    "prettier.singleQuote": true
+}

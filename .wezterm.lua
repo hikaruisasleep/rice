@@ -6,6 +6,9 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
+config.front_end = "WebGpu"
+config.webgpu_power_preference = "LowPower"
+
 config.font = wezterm.font_with_fallback {
     'Cozette',
     'CozetteVector Nerd Font',
@@ -54,7 +57,7 @@ config.color_schemes = {
     }
 }
 
-config.enable_tab_bar = true
+config.enable_tab_bar = false
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.tab_bar_at_bottom = true
